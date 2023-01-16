@@ -28,7 +28,7 @@ http.port: 9200
 #The node will bind to this address and will also use it as its transport publish address. 
 #Accepts an IP address, a hostname, or a special value. Use this setting only if you require different configurations for the transport and HTTP interfaces.
 #Defaults to the address given by network.host
-transport.host: 127.0.0.1
+transport.host: 0.0.0.0
 transport.port: 9300
 
 #cluster.initial_master_nodes is the initial list to bootstrap a cluster

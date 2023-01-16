@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
+    container_name: escert
+    hostname: escert
+    environment:
+      - "ES_JAVA_OPTS=-Xms500m -Xmx500m"
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - $PWD:/usr/share/elasticsearch/cert
+       
