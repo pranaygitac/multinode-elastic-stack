@@ -29,8 +29,10 @@ curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es01.com:1
 curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es02.com:29200
 
 docker exec -it escert bash
+
 bin/elasticsearch-certutil cert --pem --ca-cert cert/ca/ca.crt --ca-key cert/ca/ca.key -multiple --out cert/es03.zip
- ![image](https://user-images.githubusercontent.com/95764498/212749985-4df69bab-f8aa-4e8d-9aed-d0a3f56882b4.png)
+
+![image](https://user-images.githubusercontent.com/95764498/212749985-4df69bab-f8aa-4e8d-9aed-d0a3f56882b4.png)
 
 unzip cert/es03.zip -d cert/
 
@@ -46,10 +48,9 @@ curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es03.com:3
 
 ![image](https://user-images.githubusercontent.com/95764498/212750073-dd30ddb9-0f43-4760-81e0-99df2202f781.png)
 
- 
 curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es03.com:39200/_cluster/health?pretty
  
- ![image](https://user-images.githubusercontent.com/95764498/212750093-cf71a01c-48f9-4462-bf68-8230bf6494e3.png)
+![image](https://user-images.githubusercontent.com/95764498/212750093-cf71a01c-48f9-4462-bf68-8230bf6494e3.png)
 
 
 
