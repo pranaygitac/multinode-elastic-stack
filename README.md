@@ -41,9 +41,11 @@ unzip cert/es03.zip -d cert/
  
 exit
 
-sudo chmod -R 777 ../cert 
+sudo chmod -R 777 ../cert
+
 cd elastic/es03
 docker-compose up -d
+
 curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es03.com:39200
 
 ![image](https://user-images.githubusercontent.com/95764498/212750073-dd30ddb9-0f43-4760-81e0-99df2202f781.png)
