@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
+    container_name: es03
+    hostname: es03
+    environment:
+      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ../es_data/es03:/usr/share/elasticsearch/data
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml 
+      - ../../cert/ca/ca.crt:/usr/share/elasticsearch/config/cert/ca.crt
+      - ../../cert/es03/es03.crt:/usr/share/elasticsearch/config/cert/es03.crt
+      - ../../cert/es03/es03.key:/usr/share/elasticsearch/config/cert/es03.key
+    ports:
+      - 39200:39200
+      - 39300:39300
+

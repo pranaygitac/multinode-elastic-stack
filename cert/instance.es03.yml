@@ -1,0 +1,6 @@
+instances:
+  - name: "es03" 
+    dns: 
+      - "es03.com"
+ 
+  
