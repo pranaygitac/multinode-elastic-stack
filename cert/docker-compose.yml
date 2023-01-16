@@ -4,6 +4,7 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
     container_name: escert
     hostname: escert
+    #user: "0"
     environment:
       - "ES_JAVA_OPTS=-Xms500m -Xmx500m"
       - discovery.type=single-node

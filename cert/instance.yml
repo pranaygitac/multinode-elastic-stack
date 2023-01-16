@@ -1,0 +1,11 @@
+instances:
+  - name: "es01" 
+    dns: 
+      - "es01.com"
+  - name: "es02" 
+    dns: 
+      - "es02.com"
+  - name: "kib01" 
+    dns: 
+      - "kib01.com"
+  
