@@ -1,0 +1,22 @@
+127.0.0.1	localhost
+127.0.1.1	devops-virtual-machine
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+10.51.96.67 logstash1
+10.51.96.67 logstash2
+10.51.96.67 logstash3
+10.51.96.67 logstash4 logstash4.com
+10.51.96.67 logstash5 logstash5.com
+10.51.96.67 logstash6 logstash6.com
+10.51.96.67 filebeat1 filebeat1.com
+10.51.96.67 metricbeat1 metricbeat1.com
+10.51.96.67 metricbeat2 metricbeat2.com
+10.51.96.67  es01.com
+10.51.96.67  es02.com
+10.51.96.67  es03.com
+10.51.96.67  kib01.com
