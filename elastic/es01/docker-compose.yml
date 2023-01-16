@@ -13,7 +13,10 @@ services:
     volumes:
       - ../es_data/es01:/usr/share/elasticsearch/data
       - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml 
+      - ../../cert/ca/ca.crt:/usr/share/elasticsearch/config/cert/ca.crt
+      - ../../cert/es01/es01.crt:/usr/share/elasticsearch/config/cert/es01.crt
+      - ../../cert/es01/es01.key:/usr/share/elasticsearch/config/cert/es01.key
     ports:
-      - 19200:9200
-      - 19300:9300
+      - 19200:19200
+      - 19300:19300
 

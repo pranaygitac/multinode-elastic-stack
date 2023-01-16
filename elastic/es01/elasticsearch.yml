@@ -19,7 +19,8 @@ path.data: /usr/share/elasticsearch/data
 #Defaults to the address given by network.
 #0.0.0.0 is The addresses of all available network interfaces
 http.host: 0.0.0.0
-http.port: 9200
+http.port: 19200
+http.publish_host: es01.com
 
 # http.cors.enabled: true
 # http.cors.allow-origin: "*"
@@ -29,7 +30,8 @@ http.port: 9200
 #Accepts an IP address, a hostname, or a special value. Use this setting only if you require different configurations for the transport and HTTP interfaces.
 #Defaults to the address given by network.host
 transport.host: 0.0.0.0
-transport.port: 9300
+transport.port: 19300
+transport.publish_host: es01.com
 
 #cluster.initial_master_nodes is the initial list to bootstrap a cluster
 cluster.initial_master_nodes: [ es-node-01, es-node-02 ]
@@ -42,6 +44,17 @@ discovery.seed_hosts: [ es01.com:19300, es02.com:29300 ]
 xpack.license.self_generated.type: basic
 # Enable xpack.security which is provided in basic subscription
 xpack.security.enabled: true
+
+xpack.security.http.ssl.enabled: true
+xpack.security.transport.ssl.enabled: true
+xpack.security.http.ssl.key: /usr/share/elasticsearch/config/cert/es01.key
+xpack.security.http.ssl.certificate: /usr/share/elasticsearch/config/cert/es01.crt
+xpack.security.http.ssl.certificate_authorities: /usr/share/elasticsearch/config/cert/ca.crt
+xpack.security.http.ssl.verification_mode: certificate
+xpack.security.transport.ssl.key: /usr/share/elasticsearch/config/cert/es01.key
+xpack.security.transport.ssl.certificate: /usr/share/elasticsearch/config/cert/es01.crt
+xpack.security.transport.ssl.certificate_authorities: /usr/share/elasticsearch/config/cert/ca.crt
+xpack.security.transport.ssl.verification_mode: certificate
 # Disable unused xpack features
 xpack.security.audit.enabled: true
 # xpack.monitoring.enabled: true #deprecated setting in v8.6
