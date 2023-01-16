@@ -22,6 +22,9 @@ docker-compose up -d
 
 docker exec -it es01 bash
 bin/elasticsearch-setup-passwords auto
+
+![image](https://user-images.githubusercontent.com/95764498/212750752-eb5fa0d8-a80d-46f4-9835-273aa7deac34.png)
+
  
 exit
 
