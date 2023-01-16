@@ -1,0 +1,57 @@
+cluster.name: pranay-elastic
+node.name: es-node-01
+#node.roles: [ data, master, voting_only ]
+node.roles: [ data, master ]
+bootstrap.memory_lock: true
+path.data: /usr/share/elasticsearch/data
+
+#path.repo: /usr/share/elasticsearch/data/backup
+
+#Sets the address of this node for both HTTP and transport traffic. 
+#The node will bind to this address and will also use it as its publish address. 
+#Accepts an IP address, a hostname, or a special value.
+#Defaults to _local_
+#network.host: 0.0.0.0
+
+#Sets the address of this node for HTTP traffic. 
+#The node will bind to this address and will also use it as its HTTP publish address. 
+#Accepts an IP address, a hostname, or a special value. Use this setting only if you require different configurations for the transport and HTTP interfaces.
+#Defaults to the address given by network.
+#0.0.0.0 is The addresses of all available network interfaces
+http.host: 0.0.0.0
+http.port: 9200
+
+# http.cors.enabled: true
+# http.cors.allow-origin: "*"
+
+#Sets the address of this node for transport traffic. 
+#The node will bind to this address and will also use it as its transport publish address. 
+#Accepts an IP address, a hostname, or a special value. Use this setting only if you require different configurations for the transport and HTTP interfaces.
+#Defaults to the address given by network.host
+transport.host: 127.0.0.1
+transport.port: 9300
+
+#cluster.initial_master_nodes is the initial list to bootstrap a cluster
+cluster.initial_master_nodes: [ es-node-01, es-node-02 ]
+#Remember that cluster.initial_master_nodes is used once after the cluster bootstrapping then will be ignored 
+#and it is recommended to remove it from the configuration
+
+#discovery.seed_hosts is the list of master nodes a new node uses to join the cluster
+discovery.seed_hosts: [ es01.com:19300, es02.com:29300 ]
+
+xpack.license.self_generated.type: basic
+# Enable xpack.security which is provided in basic subscription
+xpack.security.enabled: true
+# Disable unused xpack features
+xpack.security.audit.enabled: true
+# xpack.monitoring.enabled: true #deprecated setting in v8.6
+# instead use xpack.monitoring.collection.enabled
+#When xpack.monitoring.collection.enabled setting is false (default),
+#Elasticsearch monitoring data is not collected 
+#and all monitoring data from other sources such as 
+#Kibana, Beats, and Logstash is ignored
+xpack.monitoring.collection.enabled: true
+xpack.graph.enabled: false
+xpack.watcher.enabled: false
+xpack.ml.enabled: false
+xpack.security.authc.api_key.enabled: false
