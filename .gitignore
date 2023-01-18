@@ -1,2 +1,3 @@
 .git
 elastic/es_data/es*/*
+kibana/kib01/es_data/*
