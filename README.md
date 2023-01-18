@@ -29,6 +29,7 @@ bin/elasticsearch-setup-passwords auto
 exit
 
 curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es01.com:19200
+
 curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es02.com:29200
 
 docker exec -it escert bash
