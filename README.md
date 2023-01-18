@@ -58,6 +58,11 @@ curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es03.com:3
  
 ![image](https://user-images.githubusercontent.com/95764498/212750093-cf71a01c-48f9-4462-bf68-8230bf6494e3.png)
 
+curl --cacert ~/multinode-elastic-stack/cert/ca/ca.crt -u elastic 'https://es01.com:19200/_cat/nodes?v'
+
+![image](https://user-images.githubusercontent.com/95764498/213105521-988c5eb0-0d69-407e-a943-86f3949f562c.png)
+
+
 
 
 
