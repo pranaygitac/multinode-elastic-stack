@@ -62,6 +62,23 @@ curl --cacert ~/multinode-elastic-stack/cert/ca/ca.crt -u elastic 'https://es01.
 
 ![image](https://user-images.githubusercontent.com/95764498/213105521-988c5eb0-0d69-407e-a943-86f3949f562c.png)
 
+curl -X POST -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt https://es01.com:19200/_security/service/elastic/kibana/credential/token/kibana-token1?pretty
+
+![image](https://user-images.githubusercontent.com/95764498/213153406-ee1b489e-c0eb-42f0-9858-0545c2e7831c.png)
+
+curl -H "Authorization: Bearer AAEAAWVsYXN0aWMva2liYW5hL2tpYmFuYS10b2tlbjE6SHJFLWx5YmlSNU9VcnEwSDd3VzM2dw" --cacert cert/ca/ca.crt https://es01.com:19200
+
+![image](https://user-images.githubusercontent.com/95764498/213153473-63743428-d0a2-4e20-bf47-4bd7ac47c24d.png)
+
+docker exec -it kib01 bash
+
+bin/kibana-keystore create
+bin/kibana-keystore add elasticsearch.serviceAccountToken
+
+![image](https://user-images.githubusercontent.com/95764498/213153633-1eb1806b-fd41-4614-8ae1-80d2068fcb35.png)
+
+docker-compose -f kibana/kib01/docker-compose.yml restart
+
 
 
 
