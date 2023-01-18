@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    kibana:
+        image: docker.elastic.co/kibana/kibana:8.6.0
+        hostname: kib01
+        container_name: kib01
+        volumes:
+          - ../../cert/ca/ca.crt:/usr/share/kibana/config/cert/ca.crt
+          - ./kibana.yml:/usr/share/kibana/config/kibana.yml:ro
+          #- ./data:/usr/share/kibana/data
+        ports:
+          - "15601:15601"
+            
