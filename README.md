@@ -11,20 +11,27 @@ docker-compose up -d
 docker exec -it escert bash
 
 bin/elasticsearch-certutil ca --pem --out cert/cert.zip
+
 unzip cert/cert.zip -d cert/
+
 bin/elasticsearch-certutil cert  --pem --ca-cert cert/ca/ca.crt --ca-key cert/ca/ca.key --in cert/instance.yml --out cert/intial_cert.zip
+
 unzip cert/intial_cert.zip -d cert/
+
 exit
 
 sudo chmod -R 777 ../cert 
 
 cd elastic/es01
+
 docker-compose up -d
 
 cd elastic/es02
+
 docker-compose up -d
 
 docker exec -it es01 bash
+
 bin/elasticsearch-setup-passwords auto
 
 ![image](https://user-images.githubusercontent.com/95764498/212750752-eb5fa0d8-a80d-46f4-9835-273aa7deac34.png)
@@ -52,6 +59,7 @@ exit
 sudo chmod -R 777 ../cert
 
 cd elastic/es03
+
 docker-compose up -d
 
 curl -u elastic:KvEkRC28xAbiXLsUzCAt --cacert cert/ca/ca.crt  https://es03.com:39200
@@ -77,6 +85,7 @@ curl -H "Authorization: Bearer AAEAAWVsYXN0aWMva2liYW5hL2tpYmFuYS10b2tlbjE6SHJFL
 docker exec -it kib01 bash
 
 bin/kibana-keystore create
+
 bin/kibana-keystore add elasticsearch.serviceAccountToken
 
 ![image](https://user-images.githubusercontent.com/95764498/213153633-1eb1806b-fd41-4614-8ae1-80d2068fcb35.png)
