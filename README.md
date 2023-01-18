@@ -2,8 +2,12 @@
 Mulltinode elastic stack with ssl encryption
 
 chmod -R 777 cert 
+
 cd cert 
+
 docker-compose up -d 
+
+
 docker exec -it escert bash
 
 bin/elasticsearch-certutil ca --pem --out cert/cert.zip
